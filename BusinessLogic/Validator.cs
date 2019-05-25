@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
@@ -11,7 +12,10 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsSsn(string ssn)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            // SSN validates the string
+            return Regex.IsMatch(ssn, @"^(?:\d{9}|\d{3}-\d{2}-\d{4})$");
         }
 
         /// <summary>
@@ -25,6 +29,7 @@ namespace BusinessLogic
         {
             //throw new NotImplementedException();
 
+            // If it is within range, it can determine if its true or false
             if (numToTest < minValue || numToTest > maxValue)
             {
                 return false;

@@ -6,6 +6,7 @@ namespace BusinessLogicTests
     [TestClass]
     public class ValidatorTest
     {
+        // SSN
         [TestMethod]
         [DataRow("555-55-5555")]
         [DataRow("555555555")]
@@ -13,7 +14,10 @@ namespace BusinessLogicTests
         [DataRow("428-52-1234")]
         public void IsValidSsn_ValidInput_ReturnTrue(string input)
         {
-            Assert.Fail();
+            //Assert.Fail();
+
+            //Returns True                       string is input
+            Assert.AreEqual(true, Validator.IsSsn(input));
         }
 
         [TestMethod]
@@ -23,9 +27,14 @@ namespace BusinessLogicTests
         [DataRow("TenLetters")]
         public void IsValidSsn_InvalidInput_ReturnsFalse(string input)
         {
-            Assert.Fail();
+            //Assert.Fail();
+
+            //Returns False                       string is input
+            Assert.AreEqual(false, Validator.IsSsn(input));
         }
 
+
+        // IsWithinRange
         [TestMethod]
         [DataRow(10, 1, 10)] //max boundary
         [DataRow(1, 1, 10)] //min boundary
@@ -34,6 +43,8 @@ namespace BusinessLogicTests
         public void IsWithinRange_NumInInclusiveRange_ReturnTrue(int test, int min, int max)
         {
             //Assert.Fail();
+
+            //Returns True                                adding the int of test, min and max
             Assert.AreEqual(true, Validator.IsWithinRange(test, min, max));
         }
 
@@ -45,7 +56,7 @@ namespace BusinessLogicTests
         {
             //Assert.Fail();
 
-            //Returns False
+            //Returns False                               adding the int of test, min and max
             Assert.AreEqual(false, Validator.IsWithinRange(test, min, max));
         }
     }
