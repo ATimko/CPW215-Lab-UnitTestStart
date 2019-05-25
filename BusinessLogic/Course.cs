@@ -24,6 +24,8 @@ namespace BusinessLogic
         /// <summary>
         /// The instructor teaching the course
         /// </summary>
+        
+        // A improved version of get and set
         public string InstructorName
         {
             get
@@ -47,6 +49,7 @@ namespace BusinessLogic
             }
             set
             {
+                //Checks course
                 if (value != null)
                 {
                     CN = value;
@@ -69,6 +72,7 @@ namespace BusinessLogic
             }
             set
             {
+                // Value of credits
                 if (value < 30 && value > 0)
                 {
                     NumOfCredits = value;
