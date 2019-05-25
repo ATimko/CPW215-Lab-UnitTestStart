@@ -23,7 +23,13 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsWithinRange(int numToTest, int minValue, int maxValue)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            if (numToTest < minValue || numToTest > maxValue)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
